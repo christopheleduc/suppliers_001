@@ -1,48 +1,64 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <div>
       <img alt="Vue logo" src="./assets/Blockchain_Logo_250_250_001.png">
-      <HelloWorld msg="GEO Loc suppliers"/>
+      <HelloWorld msg="Welcome to GEO Loc suppliers"/>
+          <br />
+    <p>
+      <b-btn v-b-toggle.collapse1 variant="warning">Menu</b-btn>
+    </p>
+        <b-collapse id="collapse1">
+      <b-card>
+        <router-view></router-view>
+        <h3>Suppliers Options</h3>
+        <b-btn v-b-toggle.collapse2 size="sm">Afficher les options</b-btn>
+        <b-collapse id=collapse2 class="mt-2">
+          <b-card><a @click="onListClick">Suppliers list</a></b-card>
+          <b-card><a @click="onMapClick">Suppliers map</a></b-card>
+        </b-collapse>
+      </b-card>
+    </b-collapse>
     </div>
-    <div>
-      <h3>Suppliers Options</h3>
-      <ul>
-        <li><a @click="onSuppliersListClick">Suppliers list</a></li>
-        <li><a @click="onMapClick">Suppliers map</a></li>
-      </ul>
-    </div>
-    <div>
-      <Liste msg="Liste des fournisseurs"/>
+    <div class="bouton-aligne">
+      <router-link to="/" ><b-button variant="success" class="btn btn-primary btn-sm btn-block">Retour à l'accueil</b-button></router-link>
+      <!-- <SuppliersList msg="Liste des fournisseurs"/> -->
       <!-- <router-link to="/Liste">List</router-link> -->
-      <img alt="Vue logo" src="./assets/CryptoDox_Blockchain_400_226_001.png">
+      <!-- <img alt="Vue logo" src="./assets/CryptoDox_Blockchain_400_226_001.png"> -->
     </div>
     <div>
-      <Carte msg="Carte des fournisseurs"/>
+      <!-- <SuppliersMap msg="Carte des fournisseurs"/> -->
       <!-- <router-link to="/Carte">Map</router-link> -->
-      <img alt="Vue logo" src="./assets/Terre_500_01.jpg">
+      <!-- <img alt="Vue logo" src="./assets/Terre_500_01.jpg"> -->
     </div>
+    <div>
     <!-- <router-view></router-view> -->
+    </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import Liste from './components/SuppliersList.vue'
-import Carte from './components/SuppliersMap.vue'
+// import Liste from './components/SuppliersList.vue'
+// import Carte from './components/SuppliersMap.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    Liste,
-    Carte,
+    // Liste,
+    // Carte,
   },
   methods: {
-        onSuppliersListClick: function() {
+        onListClick: function() {
         window.alert('UserClikerList !')
     },
         onMapClick: function(){
         window.alert('UserClikerMap !')
+    },
+        goBack () {
+        window.history.length > 1
+          ? this.$router.go(-1)
+          : this.$router.push('/')
     }
   }
 }
