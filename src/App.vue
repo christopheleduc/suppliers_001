@@ -28,7 +28,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Liste from './components/SuppliersList.vue'
-import Carte from './components/SuppliersList.vue'
+import Carte from './components/SuppliersMap.vue'
 
 export default {
   name: 'app',
