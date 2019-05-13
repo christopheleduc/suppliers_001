@@ -3,19 +3,18 @@
     <h1>{{ msg }}</h1>
     <div>
       <!-- <img alt="Vue logo" src="../assets/Blockchain_Logo_250_250_001.png"> -->
-      <SuppliersList msg="Liste des fournisseurs"/>
     </div>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      Notice d'utilisation,<br>
+      visitez
+      <a href="https://elduke3d.com" target="_blank" rel="noopener">mon site bidon</a>.
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SuppliersList',
+  name: 'Liste',
   props: {
     msg: String
   }

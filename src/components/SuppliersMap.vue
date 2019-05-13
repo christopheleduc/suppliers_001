@@ -3,18 +3,17 @@
     <h1>{{ msg }}</h1>
     <div>
       <!-- <img alt="Vue logo" src="./assets/Blockchain_Logo_250_250_001.png"> -->
-      <SuppliersMap msg="Carte des fournisseurs"/>
     </div>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      Pour une liste complete de nos tarifs,<br>
+      consultez
+      <a href="https://cryptodox.net" target="_blank" rel="noopener">ma fausse liste des tarifs</a>.
     </p>
   </div>
 </template>
 <script>
 export default {
-  name: 'SuppliersMap',
+  name: 'Carte',
   props: {
     msg: String
   }
