@@ -5,14 +5,18 @@
       <h1>{{ name }}</h1>
       <h3 style="color:#008000" v-if="status">A du stock ? OK</h3>
       <h3 style="color:#FF0000" v-else>A du stock ? KO</h3>
-      <h5>{{ checkedAt }}</h5>
+      <h8>{{ checkedAt }}</h8>
+      <h5><timeago :datetime="checkedAt" locale="fr-FR"></timeago></h5>
       <!-- <img alt="Vue logo" :src="img"> -->
       <p>Nombre de fournisseurs : {{ counter }}</p>
     </div>
   </div>
 </template>
 
+
+
 <script>
+import VueTimeago from 'vue-timeago'
 export default {
   name: 'Suppliers',
   props: {
