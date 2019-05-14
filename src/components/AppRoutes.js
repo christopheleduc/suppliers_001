@@ -23,6 +23,11 @@ let router = new VueRouter ({
             name: 'Navigation'
         },
         {
+            path: '/Suppliers',
+            component: require ('../components/Suppliers.vue').default,
+            name: 'Suppliers'
+        },
+        {
             path: '*',
             redirect: '/'
         },

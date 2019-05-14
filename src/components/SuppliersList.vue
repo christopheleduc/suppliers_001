@@ -12,18 +12,29 @@
       visitez
       <a href="https://elduke3d.com" target="_blank" rel="noopener">mon site bidon</a>.
     </p>
+    <br>
+    <Suppliers :name="PharmaStup" :status="false" :checkedAt="new Date()" />
   </div>
 </template>
 
 <script>
+import Suppliers from './Suppliers'
 export default {
   name: 'Liste',
+  components: {
+    Suppliers,
+  },
   props: {
     msg: String
   },
   data(){
     return{
-      message: 'Liste des fournisseurs'
+      message: 'Liste des fournisseurs',
+      suppliers: [
+        {
+          
+        }
+      ]
     }
   }
 }
