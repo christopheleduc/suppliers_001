@@ -45,13 +45,13 @@ export default {
         //  },
         {
           id: 1,
-          name: "Fournisseur 1 ?",
+          name: "PharaStup",
           status: true,
           checkedAt: new Date()
         },
         {
           id: 2,
-          name: "Fournisseur 2",
+          name: "PharmaCoPetrol",
           status: false,
           checkedAt: new Date()
         }
