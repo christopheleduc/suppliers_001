@@ -8,7 +8,7 @@
       <h8>{{ checkedAt }}</h8>
       <h5><timeago :datetime="checkedAt" locale="fr-FR"></timeago></h5>
       <!-- <img alt="Vue logo" :src="img"> -->
-      <p>Nombre de fournisseurs : {{ counter }}</p>
+      <!-- <p>Nombre de fournisseurs : {{ counter }}</p> -->
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 
 
 <script>
-import VueTimeago from 'vue-timeago'
+// import VueTimeago from 'vue-timeago'
 export default {
   name: 'Suppliers',
   props: {

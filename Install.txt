@@ -1,0 +1,10 @@
+
+
+npm install vue-router
+npm install --save portal-vue
+npm i vue bootstrap-vue bootstrap
+npm i vue-timeago
+npm install --save date
+npm install leaflet vue2-leaflet --save
+
+npm cache clean --force

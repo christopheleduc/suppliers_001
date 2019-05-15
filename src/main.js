@@ -3,10 +3,12 @@ import App from './App.vue'
 import router from './components/AppRoutes'
 import PortalVue from 'portal-vue'
 import BootstrapVue from 'bootstrap-vue'
-// import VueRouter from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueTimeago from 'vue-timeago'
+import {LMap, LTileLayer, LMarker } from 'vue2-leaflet'
+import { Icon } from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 
 Vue.config.productionTip = false
 Vue.use(PortalVue)
@@ -21,19 +23,17 @@ Vue.use(VueTimeago, {
     // ja: require('date-fns/locale/ja')
   }
 })
-// Vue.use(VueRouter)
+Vue.component('l-map', LMap);
+Vue.component('l-tile-layer', LTileLayer);
+Vue.component('l-marker', LMarker);
 
-// const Liste = { template: '<div>SuppliersList</div>' }
-// const Carte = { template: '<div>SuppliersMap</div>' }
+delete Icon.Default.prototype._getIconUrl;
 
-// const routes = [
-//   { path: './components/SuppliersList.vue', component: Liste },
-//   { path: './components/SuppliersMap.vue', component: Carte }
-// ]
-
-// const router = new VueRouter({
-//   routes // raccourci pour `routes: routes`
-// })
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
 
 new Vue({
   router,

@@ -12,6 +12,7 @@
       visitez
       <a href="https://elduke3d.com" target="_blank" rel="noopener">mon site bidon</a>.
     </p>
+    <p>Nombre de fournisseurs : {{ counter }}</p>
     <br>
     <hr>
     <div v-for="supplier in suppliers" :key='supplier.id'>
@@ -56,7 +57,12 @@ export default {
         }
       ]
     }
-  }
+  },
+    computed: {
+      counter () {
+          return this.suppliers.length
+      }
+  },
 }
 </script>
 
