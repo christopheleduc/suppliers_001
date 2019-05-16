@@ -23,6 +23,9 @@
       <LMarker :lat-lng="[46.03220, 2.9482]"></LMarker>
     </LMap>
   </div>
+      <!-- <div v-for="supplier in suppliers" :key='supplier.id'>
+      <LMarker :lat-lng="[ :latitude="supplier.latitude", :longitude="supplier.longitude" ]"></LMarker>
+      </div> -->
   </div>
 </template>
 
@@ -45,7 +48,19 @@ export default {
       url: "https://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 6,
       center: [46.5322, 2.9482],
-      bounds: null
+      bounds: null,
+      suppliers: [
+        {
+          id: 1,
+          latitude: 10,
+          longitude: 10
+        },
+        {
+          id: 2,
+          latitude: 11,
+          longitude: 9.6
+        }
+      ]
     }
   }
 }
