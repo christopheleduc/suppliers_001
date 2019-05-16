@@ -45,7 +45,7 @@ export default {
         //  },
         {
           id: 1,
-          name: "PharaStup",
+          name: "ProduStup",
           status: true,
           checkedAt: new Date()
         },
