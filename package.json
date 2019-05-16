@@ -17,6 +17,7 @@
     "portal-vue": "^2.1.4",
     "timeago.js": "^4.0.0-beta.2",
     "vue": "^2.6.10",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.6",
     "vue-timeago": "^5.1.2",
     "vue2-leaflet": "^2.1.1"

@@ -1,5 +1,6 @@
 https://github.com/Romainpetit/leaflet-vue/blob/master/src/components/Map.vue
 https://github.com/le-campus-numerique/vuejs-suppliers
+https://medium.com/@thibault60000/vue-js-pour-les-d%C3%A9butants-37a83aaea9c4
 
 
 npm install vue-router
@@ -8,5 +9,7 @@ npm i vue bootstrap-vue bootstrap
 npm i vue-timeago
 npm install --save date
 npm install leaflet vue2-leaflet --save
+npm install --save vue-resource
+npm install -g json-server
 
 npm cache clean --force
