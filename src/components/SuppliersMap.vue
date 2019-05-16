@@ -16,11 +16,8 @@
     <div style="height: 80vh">
     <LMap :zoom="zoom" :center="center">
       <LTileLayer :url="url"></LTileLayer>
-      <LMarker :lat-lng="[47.413220, -1.219482]"></LMarker>
-      <LMarker :lat-lng="[46.193220, 4.82]"></LMarker>
-      <LMarker :lat-lng="[45.193220, 6.82]"></LMarker>
-      <LMarker :lat-lng="[47.03220, -0.9482]"></LMarker>
-      <LMarker :lat-lng="[46.03220, 2.9482]"></LMarker>
+      <!-- <LMarker :lat-lng="[46.03220, 2.9482]"></LMarker> -->
+      <LMarker class="suppliers" v-for="supplier in suppliers" v-bind:key="supplier.id" :lat-lng="[supplier.latitude, supplier.longitude]"></LMarker>
     </LMap>
   </div>
       <!-- <div v-for="supplier in suppliers" :key='supplier.id'>
@@ -59,6 +56,31 @@ export default {
           id: 2,
           latitude: 11,
           longitude: 9.6
+        },
+        {
+          id: 3,
+          latitude: 47.413220,
+          longitude: -1.219482
+        },
+        {
+          id: 4,
+          latitude: 46.193220,
+          longitude: 4.82
+        },
+        {
+          id: 5,
+          latitude: 45.193220,
+          longitude: 6.82
+        },
+        {
+          id: 6,
+          latitude: 47.03220,
+          longitude: -0.9482
+        },
+        {
+          id: 7,
+          latitude: 46.03220,
+          longitude: 2.9482
         }
       ]
     }
