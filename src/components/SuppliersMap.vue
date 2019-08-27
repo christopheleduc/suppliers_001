@@ -12,6 +12,9 @@
       consultez
       <a href="https://cryptodox.net" target="_blank" rel="noopener">ma fausse liste des tarifs</a>.
     </p>
+    <p>
+      {{ suppliers }}
+    </p>
     </div>
     <div style="height: 80vh">
     <LMap :zoom="zoom" :center="center">
@@ -28,6 +31,7 @@
 
 <script>
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
+import axios from 'axios';
 export default {
   name: 'Carte',
   components: {
@@ -38,52 +42,58 @@ export default {
   props: {
     msg: String
   },
-  data(){
-    return{
+  data() {
+    return {
       message: 'Carte des fournisseurs',
       // img: '.././assets/Blockchain_Logo_250_250_001.png',
       url: "https://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 6,
       center: [46.5322, 2.9482],
       bounds: null,
-      suppliers: [
-        {
-          id: 1,
-          latitude: 10,
-          longitude: 10
-        },
-        {
-          id: 2,
-          latitude: 11,
-          longitude: 9.6
-        },
-        {
-          id: 3,
-          latitude: 47.413220,
-          longitude: -1.219482
-        },
-        {
-          id: 4,
-          latitude: 46.193220,
-          longitude: 4.82
-        },
-        {
-          id: 5,
-          latitude: 45.193220,
-          longitude: 6.82
-        },
-        {
-          id: 6,
-          latitude: 47.03220,
-          longitude: -0.9482
-        },
-        {
-          id: 7,
-          latitude: 46.03220,
-          longitude: 2.9482
-        }
-      ]
+      suppliers: null
+      // [
+      //   {
+      //     id: 1,
+      //     latitude: 10,
+      //     longitude: 10
+      //   },
+      //   {
+      //     id: 2,
+      //     latitude: 11,
+      //     longitude: 9.6
+      //   },
+      //   {
+      //     id: 3,
+      //     latitude: 47.413220,
+      //     longitude: -1.219482
+      //   },
+      //   {
+      //     id: 4,
+      //     latitude: 46.193220,
+      //     longitude: 4.82
+      //   },
+      //   {
+      //     id: 5,
+      //     latitude: 45.193220,
+      //     longitude: 6.82
+      //   },
+      //   {
+      //     id: 6,
+      //     latitude: 47.03220,
+      //     longitude: -0.9482
+      //   },
+      //   {
+      //     id: 7,
+      //     latitude: 46.03220,
+      //     longitude: 2.9482
+      //   }
+      // ]
     }
+  },
+  mounted () {
+    axios
+      .get('https://boutique/suppliers/json')
+      .then(response => (this.suppliers = response))
   }
 }
 </script>
