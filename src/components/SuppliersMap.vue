@@ -12,9 +12,9 @@
       consultez
       <a href="https://cryptodox.net" target="_blank" rel="noopener">ma fausse liste des tarifs</a>.
     </p>
-    <p>
+    <!-- <p>
       {{ suppliers }}
-    </p>
+    </p> -->
     </div>
     <div style="height: 80vh">
     <LMap :zoom="zoom" :center="center">
@@ -92,8 +92,8 @@ export default {
   },
   mounted () {
     axios
-      .get('https://boutique/suppliers/json')
-      .then(response => (this.suppliers = response))
+      .get('https://boutique/suppliers')
+      .then(response => (this.suppliers = response.data))
   }
 }
 </script>
