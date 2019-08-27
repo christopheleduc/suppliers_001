@@ -92,8 +92,8 @@ export default {
   },
   mounted () {
     axios
-      .get('https://boutique/suppliers')
-      .then(response => (this.suppliers = response.data))
+      .get('https://boutique/suppliers/json')
+      .then(response => (this.suppliers = response.data.items))
   }
 }
 </script>
